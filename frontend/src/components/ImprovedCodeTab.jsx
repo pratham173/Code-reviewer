@@ -1,5 +1,6 @@
 import React from 'react';
-import Editor from '@monaco-editor/react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function ImprovedCodeTab({ analysis }) {
   return (
@@ -13,21 +14,21 @@ function ImprovedCodeTab({ analysis }) {
           Here's an improved version of your code with better performance and cleaner structure:
         </p>
       </div>
-      <div className="rounded-lg overflow-hidden shadow-lg border border-gray-700" style={{ height: '500px' }}>
-        <Editor
-          height="100%"
+      <div className="rounded-lg overflow-hidden shadow-lg border border-gray-700">
+        <SyntaxHighlighter
           language="javascript"
-          value={analysis.improvedCode || '// No improved code available'}
-          theme="vs-dark"
-          options={{
-            readOnly: true,
-            minimap: { enabled: false },
-            fontSize: 14,
-            lineNumbers: 'on',
-            scrollBeyondLastLine: false,
-            automaticLayout: true,
+          style={vscDarkPlus}
+          customStyle={{
+            margin: 0,
+            padding: '1.5rem',
+            fontSize: '14px',
+            maxHeight: '500px',
+            overflowY: 'auto',
           }}
-        />
+          showLineNumbers={true}
+        >
+          {analysis.improvedCode || '// No improved code available'}
+        </SyntaxHighlighter>
       </div>
     </div>
   );

@@ -1,30 +1,23 @@
 import React from 'react';
-import Editor from '@monaco-editor/react';
 
 function CodeEditor({ code, onChange, language }) {
-  const languageMap = {
-    'C++': 'cpp',
-    'Python': 'python',
-    'Java': 'java',
-    'JavaScript': 'javascript'
+  const handleChange = (e) => {
+    onChange(e.target.value);
   };
 
   return (
-    <div className="h-full rounded-lg overflow-hidden shadow-lg border border-gray-700">
-      <Editor
-        height="100%"
-        language={languageMap[language] || 'javascript'}
+    <div className="h-full rounded-lg overflow-hidden shadow-lg border border-gray-700 bg-gray-900">
+      <textarea
         value={code}
-        onChange={onChange}
-        theme="vs-dark"
-        options={{
-          minimap: { enabled: false },
-          fontSize: 14,
-          lineNumbers: 'on',
-          scrollBeyondLastLine: false,
-          automaticLayout: true,
+        onChange={handleChange}
+        placeholder={`Enter your ${language} code here...`}
+        className="w-full h-full p-4 bg-gray-900 text-gray-100 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+        style={{
+          fontFamily: "'Courier New', Courier, monospace",
           tabSize: 2,
+          lineHeight: '1.5',
         }}
+        spellCheck="false"
       />
     </div>
   );
