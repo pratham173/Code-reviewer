@@ -4,7 +4,7 @@ import ComplexityTab from './ComplexityTab';
 import IssuesTab from './IssuesTab';
 import ImprovedCodeTab from './ImprovedCodeTab';
 
-function AnalysisPanel({ analysis, loading }) {
+function AnalysisPanel({ analysis, loading, language }) {
   const [activeTab, setActiveTab] = useState('explanation');
 
   const tabs = [
@@ -62,7 +62,7 @@ function AnalysisPanel({ analysis, loading }) {
         {activeTab === 'explanation' && <ExplanationTab analysis={analysis} />}
         {activeTab === 'complexity' && <ComplexityTab analysis={analysis} />}
         {activeTab === 'issues' && <IssuesTab analysis={analysis} />}
-        {activeTab === 'improved' && <ImprovedCodeTab analysis={analysis} />}
+        {activeTab === 'improved' && <ImprovedCodeTab analysis={analysis} language={language} />}
       </div>
     </div>
   );

@@ -239,7 +239,7 @@ function App() {
 
           {/* Right Panel - Analysis */}
           <div>
-            <AnalysisPanel analysis={analysis} loading={loading} />
+            <AnalysisPanel analysis={analysis} loading={loading} language={language} />
           </div>
         </div>
       </div>

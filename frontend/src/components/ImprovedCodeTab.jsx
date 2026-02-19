@@ -2,7 +2,14 @@ import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-function ImprovedCodeTab({ analysis }) {
+function ImprovedCodeTab({ analysis, language }) {
+  const languageMap = {
+    'C++': 'cpp',
+    'Python': 'python',
+    'Java': 'java',
+    'JavaScript': 'javascript'
+  };
+
   return (
     <div className="space-y-4">
       <div className="bg-gray-700 rounded-lg p-6">
@@ -16,7 +23,7 @@ function ImprovedCodeTab({ analysis }) {
       </div>
       <div className="rounded-lg overflow-hidden shadow-lg border border-gray-700">
         <SyntaxHighlighter
-          language="javascript"
+          language={languageMap[language] || 'javascript'}
           style={vscDarkPlus}
           customStyle={{
             margin: 0,

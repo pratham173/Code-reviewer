@@ -7,11 +7,11 @@ An AI-powered code analysis tool designed to help students learn better coding p
 ## ✨ Features
 
 ### 📝 Code Input Interface
-- **Monaco Editor** with syntax highlighting for better code visualization
+- **Code Editor** with monospace font and syntax-friendly styling
 - Support for **C++, Python, Java, and JavaScript**
 - **File upload** functionality (`.cpp`, `.py`, `.java`, `.js`)
 - **Example code** snippets for quick testing
-- Real-time code editing with IntelliSense
+- Real-time code editing with proper formatting
 
 ### 🧠 AI-Powered Analysis
 The app provides comprehensive code reviews including:
@@ -42,7 +42,7 @@ The app provides comprehensive code reviews including:
 ### Frontend
 - **React 18** - UI framework
 - **Tailwind CSS** - Styling
-- **Monaco Editor** - Code editor component
+- **React Syntax Highlighter** - Code display with syntax highlighting
 - **Recharts** - Complexity visualization
 - **React Markdown** - Formatted AI responses
 - **Axios** - HTTP client
